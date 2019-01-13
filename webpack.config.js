@@ -1,3 +1,5 @@
+const JavaScriptObfuscator = require("webpack-obfuscator");
+
 const defaultConfig = params => ({
     entry: {
         build: params.input
@@ -19,7 +21,12 @@ const defaultConfig = params => ({
                 loader: "babel-loader"
             }
         ]
-    }
+    },
+    plugins: [
+        new JavaScriptObfuscator({
+            rotateUnicodeArray: true
+        })
+    ]
 });
 
 module.exports = [
