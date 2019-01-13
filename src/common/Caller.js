@@ -1,4 +1,5 @@
 import axios from "axios";
+import objectAssign from "object-assign";
 import LocalStorage from "../browser/LocalStorage";
 
 class Caller {
@@ -19,8 +20,8 @@ class Caller {
         return axios({
             url: endpoint,
             method: method,
-            headers: { ...this.getHeaders(), headers },
-            params,
+            headers: objectAssign(this.getHeaders(), headers),
+            params: objectAssign(params),
             data: body
         });
     };
