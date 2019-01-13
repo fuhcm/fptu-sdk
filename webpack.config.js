@@ -1,5 +1,3 @@
-const JavaScriptObfuscator = require("webpack-obfuscator");
-
 const defaultConfig = params => ({
     entry: {
         build: params.input
@@ -22,11 +20,9 @@ const defaultConfig = params => ({
             }
         ]
     },
-    plugins: [
-        new JavaScriptObfuscator({
-            rotateUnicodeArray: true
-        })
-    ]
+    node: {
+        buffer: false
+    }
 });
 
 module.exports = [
