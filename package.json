@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "jest",
-        "build": "webpack --config webpack.config.js"
+        "build": "npm run test && webpack --config webpack.config.js"
     },
     "author": "Tu Huynh",
     "license": "ISC",
@@ -18,14 +18,21 @@
         "@babel/plugin-transform-runtime": "^7.2.0",
         "@babel/preset-env": "^7.2.3",
         "@babel/runtime": "7.0.0-beta.55",
-        "babel-core": "^6.26.3",
+        "babel-core": "^7.0.0-bridge.0",
+        "babel-jest": "^23.6.0",
         "babel-loader": "^8.0.5",
         "jest": "^23.6.0",
+        "regenerator-runtime": "^0.13.1",
         "webpack": "^4.27.1",
         "webpack-cli": "^3.1.2"
     },
     "dependencies": {
         "axios": "^0.18.0",
         "uuid": "^3.3.2"
+    },
+    "jest": {
+        "globals": {
+            "APP_ENV": "https://api.fptu.tech"
+        }
     }
 }

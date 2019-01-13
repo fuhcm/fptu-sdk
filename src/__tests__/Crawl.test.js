@@ -1,11 +1,7 @@
 import CrawlService from "../Crawl";
 
 test("SDK_Crawl_ShouldLive", async () => {
-    try {
-        const data = await CrawlService.getOverview();
+    const data = await CrawlService.getArticles("fpt");
 
-        expect(typeof data).toBe("array");
-    } catch (e) {
-        expect(e).toBeNull();
-    }
+    expect(typeof data).toBe("object");
 });
