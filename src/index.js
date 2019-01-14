@@ -5,6 +5,7 @@ import MyConfessService from "./MyConfess";
 import OverviewService from "./Overview";
 import SearchService from "./Search";
 import SendService from "./Send";
+import PushService from "./Push";
 
 class SDK {
     constructor() {
@@ -15,6 +16,7 @@ class SDK {
         this.overview = OverviewService;
         this.search = SearchService;
         this.send = SendService;
+        this.push = PushService;
     }
 }
 

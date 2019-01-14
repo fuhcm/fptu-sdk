@@ -23,3 +23,6 @@ export const GUEST__GET_SEARCH = API_BASE_URL + "/confessions/search";
 
 // Crawl
 export const CRAWL__URL = BASE_URL + "/crawl";
+
+// Push
+export const PUSH__URL = API_BASE_URL + "/push/sync";
