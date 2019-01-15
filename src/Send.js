@@ -1,7 +1,7 @@
 import BaseHTTP from "./BaseHTTP";
 
 class SendService extends BaseHTTP {
-    sendConfess = async (content, captcha) => {
+    sendConfess = async (content, captcha, pushID) => {
         this.localStorage.generateSenderToken();
 
         try {
@@ -9,7 +9,8 @@ class SendService extends BaseHTTP {
                 content,
                 sender: this.localStorage.getSenderToken(),
                 status: 0,
-                captcha: captcha
+                captcha: captcha,
+                pushid: pushID
             });
 
             return true;
