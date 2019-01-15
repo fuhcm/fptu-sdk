@@ -10,11 +10,17 @@ class PushService extends BaseHTTP {
                 push_id: id
             });
 
+            this.localStorage.syncPush(id);
+
             return true;
         } catch (err) {
             // Catch error
             return null;
         }
+    };
+
+    getPushID = () => {
+        return this.localStorage.getPushID();
     };
 }
 

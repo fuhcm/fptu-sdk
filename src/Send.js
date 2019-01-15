@@ -18,6 +18,10 @@ class SendService extends BaseHTTP {
             return null;
         }
     };
+
+    init = () => {
+        this.localStorage.generateSenderToken();
+    };
 }
 
 export default new SendService();

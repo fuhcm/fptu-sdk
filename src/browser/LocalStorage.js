@@ -1,11 +1,12 @@
 import uuidv4 from "uuid/v4";
 
 export const LOCAL_STORAGE_KEY = {
-    JWT         : "cfapp_jwt",
-    EMAIL       : "cfapp_email",
-    NICKNAME    : "cfapp_nickname",
-    SENDER      : "cfapp_sendertoken",
+    JWT: "cfapp_jwt",
+    EMAIL: "cfapp_email",
+    NICKNAME: "cfapp_nickname",
+    SENDER: "cfapp_sendertoken",
     NOTIFICATION: "cfapp_notification_v1",
+    PUSH_ID: "cfapp_push_id"
 };
 
 class LocalStorageUtils {
@@ -69,7 +70,17 @@ class LocalStorageUtils {
     }
 
     getSenderToken() {
+        this.generateSenderToken();
+
         return this.getItem(LOCAL_STORAGE_KEY.SENDER, "guest");
+    }
+
+    syncPush(id) {
+        this.setItem(LOCAL_STORAGE_KEY.PUSH_ID, id);
+    }
+
+    getPushID() {
+        this.getItem(LOCAL_STORAGE_KEY.PUSH_ID, "");
     }
 
     setNotificationLoaded() {
