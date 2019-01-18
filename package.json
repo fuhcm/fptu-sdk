@@ -21,10 +21,5 @@
     "dependencies": {
         "axios": "^0.18.0",
         "uuid": "^3.3.2"
-    },
-    "jest": {
-        "globals": {
-            "APP_ENV": "https://api.fptu.tech"
-        }
     }
 }
