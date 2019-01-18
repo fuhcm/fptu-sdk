@@ -1,10 +1,10 @@
-const defaultConfig = params => ({
+module.exports = () => ({
     entry: {
-        build: params.input
+        build: "./src/index.ts"
     },
     output: {
         path: __dirname + "/dist",
-        filename: params.output
+        filename: "fptu-sdk.js"
     },
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".json", ".jsx"]
@@ -20,10 +20,3 @@ const defaultConfig = params => ({
         ]
     }
 });
-
-module.exports = [
-    {
-        input: "./src/index.ts",
-        output: "fptu-sdk.js"
-    }
-].map(item => defaultConfig(item));
