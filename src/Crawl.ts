@@ -1,7 +1,7 @@
 import BaseHTTP from "./BaseHTTP";
 
 class CrawlService extends BaseHTTP {
-    getArticles = async name => {
+    public getArticles = async (name: string) => {
         try {
             const { data } = await this.caller.get(
                 this.endpoints.CRAWL__URL + "/" + name
@@ -14,7 +14,7 @@ class CrawlService extends BaseHTTP {
         }
     };
 
-    getArticleDetails = async (name, guid) => {
+    public getArticleDetails = async (name: string, guid: string) => {
         try {
             const { data } = await this.caller.get(
                 this.endpoints.CRAWL__URL + "/" + name + "/" + guid

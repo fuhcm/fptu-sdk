@@ -1,7 +1,7 @@
 import BaseHTTP from "./BaseHTTP";
 
 class PushService extends BaseHTTP {
-    syncPush = async id => {
+    public syncPush = async (id: string) => {
         this.localStorage.generateSenderToken();
 
         try {
@@ -19,7 +19,7 @@ class PushService extends BaseHTTP {
         }
     };
 
-    getPushID = () => {
+    public getPushID = () => {
         return this.localStorage.getPushID();
     };
 }

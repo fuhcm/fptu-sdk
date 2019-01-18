@@ -10,7 +10,7 @@ export const LOCAL_STORAGE_KEY = {
 };
 
 class LocalStorageUtils {
-    getItem(key, defaultValue) {
+    public getItem(key: string, defaultValue: any) {
         if (typeof localStorage !== "undefined") {
             return localStorage.getItem(key) || defaultValue;
         }
@@ -18,77 +18,77 @@ class LocalStorageUtils {
         return "undefined";
     }
 
-    setItem(key, value) {
+    public setItem(key: string, value: any) {
         if (typeof localStorage !== "undefined") {
             localStorage.setItem(key, value);
         }
     }
 
-    removeItem(key) {
+    public removeItem(key: string) {
         if (typeof localStorage !== "undefined") {
             localStorage.removeItem(key);
         }
     }
 
-    clear() {
+    public clear() {
         if (typeof localStorage !== "undefined") {
             localStorage.clear();
         }
     }
 
-    isAuthenticated() {
-        const jwt = this.getItem(LOCAL_STORAGE_KEY.JWT);
+    public isAuthenticated() {
+        const jwt: string = this.getItem(LOCAL_STORAGE_KEY.JWT, "");
         return jwt && jwt !== "undefined";
     }
 
-    getJWT() {
+    public getJWT() {
         return this.getItem(LOCAL_STORAGE_KEY.JWT, "");
     }
 
-    getEmail() {
+    public getEmail() {
         return this.getItem(LOCAL_STORAGE_KEY.EMAIL, "");
     }
 
-    getName() {
+    public getName() {
         const email = this.getItem(LOCAL_STORAGE_KEY.EMAIL, "");
 
         return email.substring(0, email.lastIndexOf("@"));
     }
 
-    getNickName() {
+    public getNickName() {
         return this.getItem(LOCAL_STORAGE_KEY.NICKNAME, "");
     }
 
-    generateSenderToken() {
-        const token = this.getItem(LOCAL_STORAGE_KEY.SENDER);
+    public generateSenderToken() {
+        const token = this.getItem(LOCAL_STORAGE_KEY.SENDER, "");
 
         if (!token || token === "undefined") {
-            const newSenderToken = uuidv4();
+            const newSenderToken: string = uuidv4();
 
             this.setItem(LOCAL_STORAGE_KEY.SENDER, newSenderToken);
         }
     }
 
-    getSenderToken() {
+    public getSenderToken() {
         this.generateSenderToken();
 
         return this.getItem(LOCAL_STORAGE_KEY.SENDER, "guest");
     }
 
-    syncPush(id) {
+    public syncPush(id: string) {
         this.setItem(LOCAL_STORAGE_KEY.PUSH_ID, id);
     }
 
-    getPushID() {
+    public getPushID() {
         this.getItem(LOCAL_STORAGE_KEY.PUSH_ID, "");
     }
 
-    setNotificationLoaded() {
+    public setNotificationLoaded() {
         this.setItem(LOCAL_STORAGE_KEY.NOTIFICATION, true);
     }
 
-    isNotificationLoaded() {
-        const loaded = this.getItem(LOCAL_STORAGE_KEY.NOTIFICATION);
+    public isNotificationLoaded() {
+        const loaded: string = this.getItem(LOCAL_STORAGE_KEY.NOTIFICATION, "");
         return loaded && loaded !== "undefined";
     }
 }

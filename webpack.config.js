@@ -14,20 +14,16 @@ const defaultConfig = params => ({
     module: {
         rules: [
             {
-                test: /\.(js)$/,
-                exclude: /node_modules/,
-                loader: "babel-loader"
+                test: /\.(ts|tsx)?$/,
+                loader: "ts-loader"
             }
         ]
-    },
-    node: {
-        buffer: false
     }
 });
 
 module.exports = [
     {
-        input: "./src/index.js",
+        input: "./src/index.ts",
         output: "fptu-sdk.js"
     }
 ].map(item => defaultConfig(item));

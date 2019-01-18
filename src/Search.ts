@@ -1,7 +1,7 @@
 import BaseHTTP from "./BaseHTTP";
 
 class SearchService extends BaseHTTP {
-    getPostedConfess = async numLoad => {
+    public getPostedConfess = async (numLoad: string) => {
         try {
             const { data } = await this.caller.get(
                 this.endpoints.GUEST__GET_APPROVED + "?load=" + numLoad
@@ -14,7 +14,7 @@ class SearchService extends BaseHTTP {
         }
     };
 
-    searchConfess = async keyword => {
+    public searchConfess = async (keyword: string) => {
         try {
             const { data } = await this.caller.get(
                 this.endpoints.GUEST__GET_SEARCH + "?q=" + keyword

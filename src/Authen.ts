@@ -1,7 +1,7 @@
 import BaseHTTP from "./BaseHTTP";
 
 class AuthenService extends BaseHTTP {
-    basicLogin = async (email, password) => {
+    public basicLogin = async (email: string, password: string) => {
         try {
             const { data } = await this.caller.post(
                 this.endpoints.AUTH__LOGIN,
@@ -15,7 +15,7 @@ class AuthenService extends BaseHTTP {
         }
     };
 
-    loginFacebook = async (email, token) => {
+    public loginFacebook = async (email: string, token: string) => {
         try {
             const { data } = await this.caller.post(
                 this.endpoints.AUTH__LOGIN_FACEBOOK,
@@ -29,7 +29,7 @@ class AuthenService extends BaseHTTP {
         }
     };
 
-    saveToken = (token, email, nickname) => {
+    public saveToken = (token: string, email: string, nickname: string) => {
         this.localStorage.setItem(this.keys.JWT, token);
         this.localStorage.setItem(this.keys.EMAIL, email);
         this.localStorage.setItem(this.keys.NICKNAME, nickname);
