@@ -1,7 +1,7 @@
 import BaseHTTP from "./BaseHTTP";
 
 class OverviewService extends BaseHTTP {
-    getOverview = async () => {
+    public getOverview = async () => {
         try {
             const { data } = await this.caller.get(
                 this.endpoints.GUEST__GET_OVERVIEW

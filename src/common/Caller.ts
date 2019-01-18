@@ -3,7 +3,7 @@ import objectAssign from "object-assign";
 import LocalStorage from "../browser/LocalStorage";
 
 class Caller {
-    getHeaders() {
+    public getHeaders() {
         if (!LocalStorage.getJWT() || LocalStorage.getJWT() === "") {
             return {
                 "Content-Type": "application/json"
@@ -16,7 +16,13 @@ class Caller {
         };
     }
 
-    request = (endpoint, method, headers = {}, params = {}, body = {}) => {
+    public request = (
+        endpoint,
+        method,
+        headers = {},
+        params = {},
+        body = {}
+    ) => {
         return axios({
             url: endpoint,
             method: method,
@@ -26,15 +32,15 @@ class Caller {
         });
     };
 
-    get = (endpoint, params = {}, headers = {}) => {
+    public get = (endpoint, params = {}, headers = {}) => {
         return this.request(endpoint, "GET", headers, params);
     };
 
-    post = (endpoint, body = {}, params = {}, headers = {}) => {
+    public post = (endpoint, body = {}, params = {}, headers = {}) => {
         return this.request(endpoint, "POST", headers, params, body);
     };
 
-    put = (endpoint, body = {}, params = {}, headers = {}) => {
+    public put = (endpoint, body = {}, params = {}, headers = {}) => {
         return this.request(endpoint, "PUT", headers, params, body);
     };
 }

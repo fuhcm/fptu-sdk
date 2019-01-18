@@ -1,7 +1,7 @@
 import BaseHTTP from "./BaseHTTP";
 
 class AdminService extends BaseHTTP {
-    getListConfession = async numLoad => {
+    public getListConfession = async (numLoad: string) => {
         try {
             const { data } = await this.caller.get(
                 this.endpoints.ADMINCP__GET_CONFESS + "?load=" + numLoad
@@ -18,7 +18,7 @@ class AdminService extends BaseHTTP {
         }
     };
 
-    approveConfess = async id => {
+    public approveConfess = async (id: string) => {
         try {
             const { data } = await this.caller.put(
                 this.endpoints.ADMINCP__APPROVE_CONFESS,
@@ -32,7 +32,7 @@ class AdminService extends BaseHTTP {
         }
     };
 
-    rejectConfess = async (id, reason) => {
+    public rejectConfess = async (id: string, reason: string) => {
         try {
             const { data } = await this.caller.put(
                 this.endpoints.ADMINCP__REJECT_CONFESS,

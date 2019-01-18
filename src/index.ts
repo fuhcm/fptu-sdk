@@ -7,7 +7,24 @@ import SearchService from "./Search";
 import SendService from "./Send";
 import PushService from "./Push";
 
+declare global {
+    interface Window {
+        FPTUSDK: any;
+    }
+
+    var APP_ENV: any;
+}
+
 class SDK {
+    protected admin: any;
+    protected authen: any;
+    protected crawl: any;
+    protected myconfess: any;
+    protected overview: any;
+    protected search: any;
+    protected send: any;
+    protected push: any;
+
     constructor() {
         this.admin = AdminService;
         this.authen = AuthenService;
