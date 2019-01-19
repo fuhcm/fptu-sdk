@@ -10,7 +10,7 @@ export const LOCAL_STORAGE_KEY = {
 };
 
 class LocalStorageUtils {
-    public getItem(key: string, defaultValue: any) {
+    public getItem(key: string, defaultValue: any): any {
         if (typeof localStorage !== "undefined") {
             return localStorage.getItem(key) || defaultValue;
         }
@@ -18,48 +18,48 @@ class LocalStorageUtils {
         return "undefined";
     }
 
-    public setItem(key: string, value: any) {
+    public setItem(key: string, value: any): void {
         if (typeof localStorage !== "undefined") {
             localStorage.setItem(key, value);
         }
     }
 
-    public removeItem(key: string) {
+    public removeItem(key: string): void {
         if (typeof localStorage !== "undefined") {
             localStorage.removeItem(key);
         }
     }
 
-    public clear() {
+    public clear(): void {
         if (typeof localStorage !== "undefined") {
             localStorage.clear();
         }
     }
 
-    public isAuthenticated() {
+    public isAuthenticated(): boolean | string {
         const jwt: string = this.getItem(LOCAL_STORAGE_KEY.JWT, "");
         return jwt && jwt !== "undefined";
     }
 
-    public getJWT() {
+    public getJWT(): string {
         return this.getItem(LOCAL_STORAGE_KEY.JWT, "");
     }
 
-    public getEmail() {
+    public getEmail(): string {
         return this.getItem(LOCAL_STORAGE_KEY.EMAIL, "");
     }
 
-    public getName() {
+    public getName(): string {
         const email = this.getItem(LOCAL_STORAGE_KEY.EMAIL, "");
 
         return email.substring(0, email.lastIndexOf("@"));
     }
 
-    public getNickName() {
+    public getNickName(): string {
         return this.getItem(LOCAL_STORAGE_KEY.NICKNAME, "");
     }
 
-    public generateSenderToken() {
+    public generateSenderToken(): void {
         const token = this.getItem(LOCAL_STORAGE_KEY.SENDER, "");
 
         if (!token || token === "undefined") {
@@ -69,25 +69,25 @@ class LocalStorageUtils {
         }
     }
 
-    public getSenderToken() {
+    public getSenderToken(): string {
         this.generateSenderToken();
 
         return this.getItem(LOCAL_STORAGE_KEY.SENDER, "guest");
     }
 
-    public syncPush(id: string) {
+    public syncPush(id: string): void {
         this.setItem(LOCAL_STORAGE_KEY.PUSH_ID, id);
     }
 
-    public getPushID() {
-        this.getItem(LOCAL_STORAGE_KEY.PUSH_ID, "");
+    public getPushID(): string {
+        return this.getItem(LOCAL_STORAGE_KEY.PUSH_ID, "");
     }
 
-    public setNotificationLoaded() {
+    public setNotificationLoaded(): void {
         this.setItem(LOCAL_STORAGE_KEY.NOTIFICATION, true);
     }
 
-    public isNotificationLoaded() {
+    public isNotificationLoaded(): boolean | string {
         const loaded: string = this.getItem(LOCAL_STORAGE_KEY.NOTIFICATION, "");
         return loaded && loaded !== "undefined";
     }
