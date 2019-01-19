@@ -17,7 +17,7 @@ FROM nginx:1.15
 
 WORKDIR /root/src/app
 
-COPY --from=builder /root/src/app/dist /usr/share/nginx/html
+COPY --from=builder /root/src/app/dist/fptu-sdk.js /usr/share/nginx/html/fptu-sdk.js
 
 EXPOSE 80
 
