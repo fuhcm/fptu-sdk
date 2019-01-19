@@ -1,7 +1,6 @@
 import axios, { AxiosPromise } from "axios";
 import objectAssign from "object-assign";
 import LocalStorage from "../browser/LocalStorage";
-import { AxiosInstance } from "axios";
 
 class Caller {
     public getHeaders(): object {
