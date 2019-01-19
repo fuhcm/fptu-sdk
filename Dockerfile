@@ -13,7 +13,7 @@ RUN yarn
 RUN npm run build
 
 # Copy files to machine
-FROM nginx:1.15
+FROM nginx:1.15.8-alpine
 
 WORKDIR /root/src/app
 
