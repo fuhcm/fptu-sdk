@@ -9,7 +9,7 @@ class AdminService extends BaseHTTP {
 
             return data || [];
         } catch (err) {
-            if (err.reponse.status === 401) {
+            if (err.response.status === 401) {
                 // Do logout
                 this.localStorage.clear();
 
