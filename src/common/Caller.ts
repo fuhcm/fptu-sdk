@@ -3,7 +3,7 @@ import objectAssign from "object-assign";
 import LocalStorage from "../browser/LocalStorage";
 
 class Caller {
-    public getHeaders(): object {
+    private getHeaders(): object {
         if (!LocalStorage.getJWT() || LocalStorage.getJWT() === "") {
             return {
                 "Content-Type": "application/json"
@@ -16,7 +16,7 @@ class Caller {
         };
     }
 
-    public request(
+    private request(
         endpoint: string,
         method: string,
         headers: object = {},
