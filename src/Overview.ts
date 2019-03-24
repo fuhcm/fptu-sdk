@@ -14,4 +14,4 @@ class OverviewService extends BaseHTTP {
     };
 }
 
-export default new OverviewService();
+export default OverviewService;

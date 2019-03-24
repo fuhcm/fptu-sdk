@@ -4,7 +4,7 @@ import LocalStorage from "../browser/LocalStorage";
 
 class Caller {
     private getHeaders(): object {
-        if (!LocalStorage.getJWT() || LocalStorage.getJWT() === "") {
+        if (!LocalStorage.getJWT()) {
             return {
                 "Content-Type": "application/json"
             };

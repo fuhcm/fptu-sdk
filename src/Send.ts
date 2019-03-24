@@ -28,4 +28,4 @@ class SendService extends BaseHTTP {
     };
 }
 
-export default new SendService();
+export default SendService;

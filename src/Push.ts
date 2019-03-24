@@ -23,4 +23,4 @@ class PushService extends BaseHTTP {
     };
 }
 
-export default new PushService();
+export default PushService;

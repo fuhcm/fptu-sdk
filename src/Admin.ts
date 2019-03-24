@@ -45,4 +45,4 @@ class AdminService extends BaseHTTP {
     };
 }
 
-export default new AdminService();
+export default AdminService;

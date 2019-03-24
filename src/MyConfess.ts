@@ -17,4 +17,4 @@ class MyConfessService extends BaseHTTP {
     };
 }
 
-export default new MyConfessService();
+export default MyConfessService;

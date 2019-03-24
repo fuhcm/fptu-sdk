@@ -34,4 +34,4 @@ class AuthenService extends BaseHTTP {
     };
 }
 
-export default new AuthenService();
+export default AuthenService;

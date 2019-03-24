@@ -26,4 +26,4 @@ class CrawlService extends BaseHTTP {
     };
 }
 
-export default new CrawlService();
+export default CrawlService;

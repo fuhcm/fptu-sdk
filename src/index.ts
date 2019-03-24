@@ -16,24 +16,32 @@ declare global {
 }
 
 class SDK {
-    protected admin: any;
-    protected authen: any;
-    protected crawl: any;
-    protected myconfess: any;
-    protected overview: any;
-    protected search: any;
-    protected send: any;
-    protected push: any;
+    protected admin: AdminService;
+    protected authen: AuthenService;
+    protected crawl: CrawlService;
+    protected myconfess: MyConfessService;
+    protected overview: OverviewService;
+    protected search: SearchService;
+    protected send: SendService;
+    protected push: PushService;
 
     constructor() {
-        this.admin = AdminService;
-        this.authen = AuthenService;
-        this.crawl = CrawlService;
-        this.myconfess = MyConfessService;
-        this.overview = OverviewService;
-        this.search = SearchService;
-        this.send = SendService;
-        this.push = PushService;
+        this.admin = new AdminService();
+        this.authen = new AuthenService();
+        this.crawl = new CrawlService();
+        this.myconfess = new MyConfessService();
+        this.overview = new OverviewService();
+        this.search = new SearchService();
+        this.send = new SendService();
+        this.push = new PushService();
+    }
+
+    public getVersion(): string {
+        return "v1";
+    }
+
+    public getBaseURL(): string {
+        return APP_ENV.API_BASE_URL;
     }
 }
 

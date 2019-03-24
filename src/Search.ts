@@ -26,4 +26,4 @@ class SearchService extends BaseHTTP {
     };
 }
 
-export default new SearchService();
+export default SearchService;
