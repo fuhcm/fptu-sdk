@@ -10,8 +10,7 @@ class AuthenService extends BaseHTTP {
 
             return data || {};
         } catch (err) {
-            // Catch error
-            return null;
+            throw new Error(err);
         }
     };
 
@@ -24,8 +23,7 @@ class AuthenService extends BaseHTTP {
 
             return data || {};
         } catch (err) {
-            // Catch error
-            return null;
+            throw new Error(err);
         }
     };
 
