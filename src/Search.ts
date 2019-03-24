@@ -9,8 +9,7 @@ class SearchService extends BaseHTTP {
 
             return data || [];
         } catch (err) {
-            // Catch error
-            return null;
+            throw new Error(err.response && err.response.data);
         }
     };
 
@@ -22,8 +21,7 @@ class SearchService extends BaseHTTP {
 
             return data || [];
         } catch (err) {
-            // Catch error
-            return null;
+            throw new Error(err.response && err.response.data);
         }
     };
 }

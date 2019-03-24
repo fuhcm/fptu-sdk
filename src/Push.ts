@@ -14,8 +14,7 @@ class PushService extends BaseHTTP {
 
             return true;
         } catch (err) {
-            // Catch error
-            return null;
+            throw new Error(err.response && err.response.data);
         }
     };
 
