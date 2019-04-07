@@ -1,14 +1,15 @@
 {
     "name": "fptu-sdk",
-    "version": "1.0.1",
-    "description": "Javascript JSK",
-    "main": "index.js",
+    "version": "1.0.0",
+    "description": "Javascript SDK for web implement API at FPTU.tech",
+    "main": "./lib/index.js",
+    "browser": "./lib/index.js",
     "scripts": {
         "test": "jest",
         "build": "webpack --config webpack.config.js --progress"
     },
-    "author": "Tu Huynh",
-    "license": "ISC",
+    "author": "Tu Huynh <huynhminhtufu@gmail.com>",
+    "license": "MIT",
     "devDependencies": {
         "@types/jest": "^23.3.12",
         "jest": "^23.6.0",
@@ -21,5 +22,14 @@
     "dependencies": {
         "axios": "^0.18.0",
         "uuid": "^3.3.2"
-    }
+    },
+    "homepage": "https://fptu.tech",
+    "repository": {
+        "url": "https://github.com/gosu-team/fptu-sdk"
+    },
+    "keywords": [
+        "fptu",
+        "sdk",
+        "typescript"
+    ]
 }

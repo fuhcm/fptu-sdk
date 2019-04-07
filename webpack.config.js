@@ -1,4 +1,4 @@
-module.exports = () => ({
+module.exports = {
     entry: {
         build: "./src/index.ts"
     },
@@ -19,4 +19,4 @@ module.exports = () => ({
             }
         ]
     }
-});
+};
