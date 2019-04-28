@@ -26,3 +26,6 @@ export const CRAWL__URL = BASE_URL + "/crawl";
 
 // Push
 export const PUSH__URL = API_BASE_URL + "/push/sync";
+
+// User
+export const GET__USER = API_BASE_URL + "/users";

@@ -6,6 +6,7 @@ import OverviewService from "./Overview";
 import SearchService from "./Search";
 import SendService from "./Send";
 import PushService from "./Push";
+import UserService from "./Users";
 
 declare global {
     interface Window {
@@ -24,6 +25,7 @@ class SDK {
     protected search: SearchService;
     protected send: SendService;
     protected push: PushService;
+    protected user: UserService;
 
     constructor() {
         this.admin = new AdminService();
@@ -34,6 +36,7 @@ class SDK {
         this.search = new SearchService();
         this.send = new SendService();
         this.push = new PushService();
+        this.user = new UserService();
     }
 
     public getVersion(): string {
