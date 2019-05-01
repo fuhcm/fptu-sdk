@@ -17,7 +17,7 @@ $ npm install fptu-sdk
 -   Install yarn `npm install yarn -g`.
 -   Clone project, run `yarn` and `yarn build`, get file `fptu-sdk.js` from `/dist/` folder.
 -   You may upload that javascript file to a CDN for later use.
--   If you don't want to build you can use that file here: `https://sdk.fptu.tech/fptu-sdk.js`
+-   If you don't want to build you can use that file here: `https://cdn.jsdelivr.net/npm/fptu-sdk@[version,eg:1.0.2]/dist/fptu-sdk.js`
 
 ### How to use SDK universal javascript
 
