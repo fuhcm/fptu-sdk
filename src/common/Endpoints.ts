@@ -29,3 +29,6 @@ export const PUSH__URL = API_BASE_URL + "/push/sync";
 
 // User
 export const GET__USER = API_BASE_URL + "/users";
+
+// Radio
+export const RADIO = API_BASE_URL + "/radios";
