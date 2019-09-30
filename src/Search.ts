@@ -1,11 +1,9 @@
 import BaseHTTP from "./BaseHTTP";
 
 class SearchService extends BaseHTTP {
-    public getPostedConfess = async (latestID: string) => {
+    public getPostedConfess = async (latestID: string, isAuthenticated: boolean = false) => {
         try {
-            const { data } = await this.caller.get(
-                this.endpoints.GUEST__GET_APPROVED + "?latest_id=" + latestID
-            );
+            const { data } = await this.caller.get(`${this.endpoints.GUEST__GET_APPROVED}?latest_id=${latestID}&isAuthenticated=${isAuthenticated}`);
 
             return data || [];
         } catch (err) {
