@@ -33,4 +33,4 @@ export const RADIO = API_BASE_URL + "/radios";
 
 // Change
 export const CHANGE__SIGN = API_BASE_URL + "/change/sign";
-export const CHANGE_GET_LIST = AUTH_BASE_URL + "/change";
+export const CHANGE_GET_LIST = API_BASE_URL + "/change";
