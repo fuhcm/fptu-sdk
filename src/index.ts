@@ -8,6 +8,7 @@ import SendService from "./Send";
 import PushService from "./Push";
 import UserService from "./Users";
 import RadioService from "./Radio";
+import ChangeService from "./Change";
 
 declare global {
     interface Window {
@@ -28,6 +29,7 @@ class SDK {
     protected push: PushService;
     protected user: UserService;
     protected radio: RadioService;
+    protected change: ChangeService;
 
     constructor() {
         this.admin = new AdminService();
@@ -40,6 +42,7 @@ class SDK {
         this.push = new PushService();
         this.user = new UserService();
         this.radio = new RadioService();
+        this.change = new ChangeService();
     }
 
     public getVersion(): string {

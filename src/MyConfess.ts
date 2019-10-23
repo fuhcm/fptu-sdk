@@ -6,7 +6,7 @@ class MyConfessService extends BaseHTTP {
             const { data } = await this.caller.post(
                 this.endpoints.GUEST__GET_MY_CONFESS + "?load=" + numLoad,
                 {
-                    token: this.localStorage.getSenderToken()
+                    senderID: this.localStorage.getSenderToken()
                 }
             );
 

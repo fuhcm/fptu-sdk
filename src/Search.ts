@@ -1,9 +1,11 @@
 import BaseHTTP from "./BaseHTTP";
 
 class SearchService extends BaseHTTP {
-    public getPostedConfess = async (latestID: string, isAuthenticated: boolean = false) => {
+    public getPostedConfess = async (skip: string) => {
         try {
-            const { data } = await this.caller.get(`${this.endpoints.GUEST__GET_APPROVED}?latest_id=${latestID}&isAuthenticated=${isAuthenticated}`);
+            const { data } = await this.caller.get(
+                `${this.endpoints.GUEST__GET_APPROVED}?skip=${skip}`
+            );
 
             return data || [];
         } catch (err) {
@@ -14,7 +16,7 @@ class SearchService extends BaseHTTP {
     public searchConfess = async (keyword: string) => {
         try {
             const { data } = await this.caller.get(
-                this.endpoints.GUEST__GET_SEARCH + "?q=" + keyword
+                this.endpoints.GUEST__GET_SEARCH + "?keyword=" + keyword
             );
 
             return data || [];

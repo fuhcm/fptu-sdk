@@ -14,10 +14,10 @@ class AuthenService extends BaseHTTP {
         }
     };
 
-    public loginFacebook = async (email: string, token: string) => {
+    public loginGoogle = async (email: string, token: string) => {
         try {
             const { data } = await this.caller.post(
-                this.endpoints.AUTH__LOGIN_FACEBOOK,
+                this.endpoints.AUTH__LOGIN_GOOGLE,
                 { email, token }
             );
 

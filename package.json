@@ -1,12 +1,13 @@
 {
     "name": "fptu-sdk",
-    "version": "1.0.4",
+    "version": "1.0.6",
     "description": "Javascript SDK for web implement API at FPTU.tech",
     "main": "./lib/index.js",
     "browser": "./lib/index.js",
     "scripts": {
         "test": "jest",
-        "build": "webpack --config webpack.config.js --progress"
+        "build": "webpack --config webpack.config.js --progress",
+        "dev": "serve ./dist -s -p 9999"
     },
     "author": "Tu Huynh <huynhminhtufu@gmail.com>",
     "license": "MIT",

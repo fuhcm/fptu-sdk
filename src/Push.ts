@@ -5,9 +5,9 @@ class PushService extends BaseHTTP {
         this.localStorage.generateSenderToken();
 
         try {
-            await this.caller.post(this.endpoints.PUSH__URL, {
-                sender: this.localStorage.getSenderToken(),
-                push_id: id
+            await this.caller.put(this.endpoints.PUSH__URL, {
+                senderID: this.localStorage.getSenderToken(),
+                pushID: id
             });
 
             this.localStorage.syncPush(id);

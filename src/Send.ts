@@ -11,10 +11,10 @@ class SendService extends BaseHTTP {
         try {
             await this.caller.post(this.endpoints.GUEST__POST_CONFESS, {
                 content,
-                sender: this.localStorage.getSenderToken(),
-                status: 0,
+                senderID: this.localStorage.getSenderToken(),
                 captcha: captcha,
-                pushid: pushID
+                pushID:
+                    (pushID && pushID.trim() && pushID.trim().length) || null
             });
 
             return true;
