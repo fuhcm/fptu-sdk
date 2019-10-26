@@ -9,6 +9,7 @@ import PushService from "./Push";
 import UserService from "./Users";
 import RadioService from "./Radio";
 import ChangeService from "./Change";
+import PostService from "./Post";
 
 declare global {
     interface Window {
@@ -30,6 +31,7 @@ class SDK {
     protected user: UserService;
     protected radio: RadioService;
     protected change: ChangeService;
+    protected post: PostService;
 
     constructor() {
         this.admin = new AdminService();
@@ -43,6 +45,7 @@ class SDK {
         this.user = new UserService();
         this.radio = new RadioService();
         this.change = new ChangeService();
+        this.post = new PostService();
     }
 
     public getVersion(): string {

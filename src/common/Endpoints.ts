@@ -34,3 +34,8 @@ export const RADIO = API_BASE_URL + "/radios";
 // Change
 export const CHANGE__SIGN = API_BASE_URL + "/change/sign";
 export const CHANGE_GET_LIST = API_BASE_URL + "/change";
+
+// Post
+export const POST__LIST = API_BASE_URL + "/posts";
+export const POST__NEW = API_BASE_URL + "/posts";
+export const POST__UPDATE = API_BASE_URL + "/posts";
