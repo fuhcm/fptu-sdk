@@ -1,6 +1,6 @@
 {
     "name": "fptu-sdk",
-    "version": "1.0.10",
+    "version": "1.0.11",
     "description": "Javascript SDK for web implement API at FPTU.tech",
     "main": "./lib/index.js",
     "browser": "./lib/index.js",

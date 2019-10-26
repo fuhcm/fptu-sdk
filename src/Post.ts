@@ -19,6 +19,18 @@ class PostService extends BaseHTTP {
         }
     };
 
+    public get = async (id: string) => {
+        try {
+            const { data } = await this.caller.get(
+                this.endpoints.POST__LIST + "/" + id
+            );
+
+            return data || {};
+        } catch (err) {
+            throw new Error(err.response && err.response.data);
+        }
+    };
+
     public new = async (post: IPost) => {
         try {
             const { data } = await this.caller.post(
