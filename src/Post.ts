@@ -56,6 +56,18 @@ class PostService extends BaseHTTP {
             throw new Error(err.response && err.response.data);
         }
     };
+
+    public delete = async (id: string) => {
+        try {
+            const { data } = await this.caller.delete(
+                this.endpoints.POST__DELETE + "/" + id
+            );
+
+            return data || {};
+        } catch (err) {
+            throw new Error(err.response && err.response.data);
+        }
+    };
 }
 
 export default PostService;

@@ -57,6 +57,15 @@ class Caller {
     ): AxiosPromise<void> {
         return this.request(endpoint, "PUT", headers, params, body);
     }
+
+    public delete(
+        endpoint: string,
+        body: object = {},
+        params: object = {},
+        headers: object = {}
+    ): AxiosPromise<void> {
+        return this.request(endpoint, "DELETE", headers, params, body);
+    }
 }
 
 export default new Caller();
